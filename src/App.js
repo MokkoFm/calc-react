@@ -59,7 +59,8 @@ class App extends React.Component {
   }
 
   onEqual() {
-    let formula = this.state.formula.concat(this.state.input)
+    let formula = eval(this.state.formula.concat(this.state.input))
+    
     this.setState({
       input: formula,
     })
