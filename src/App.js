@@ -7,6 +7,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       input: 0,
+      isOperator: false,
+      formula: [],
     }
     this.putNumber = this.putNumber.bind(this)
     this.putOperator = this.putOperator.bind(this)
@@ -14,7 +16,6 @@ class App extends React.Component {
   handleChange(event) {
     this.setState({
       input: event.target.value,
-      isOperator: false,
     })
   }
 
@@ -42,7 +43,8 @@ class App extends React.Component {
     const point = target.innerText;
     let input = this.state.input;
     this.setState({
-      input: input.concat(point)
+      input: input.concat(point),
+      formula: input.concat(point)
     })
   }
 
@@ -52,6 +54,14 @@ class App extends React.Component {
     this.setState({
       input: operator,
       isOperator: true,
+      formula: input.concat(operator)
+    })
+  }
+
+  onEqual() {
+    let formula = this.state.formula.concat(this.state.input)
+    this.setState({
+      input: formula,
     })
   }
 
@@ -87,7 +97,7 @@ class App extends React.Component {
           <button id="one" onClick={this.putNumber}>1</button>
           <button id="two" onClick={this.putNumber}>2</button>
           <button id="three" onClick={this.putNumber}>3</button>
-          <button id="equals">=</button>
+          <button id="equals" onClick={this.onEqual.bind(this)}>=</button>
         </div>
         <div className="third_row">
           <button id="zero" onClick={this.putNumber}>0</button>
