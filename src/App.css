@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #e7e7de;
 }
 
-.App-link {
-  color: #61dafb;
+.calc {
+  width: 400px;
+  height: 550px;
+  background-color: #0f3057;
+  margin-top: 40%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first_row button {
+  background-color: #00587a;
+  width: 33.3%;
+  text-align: center;
+  height: 100px;
+  color: #e7e7de;
+  border: 1px solid #0f3057;
+  font-size: 20px;
+}
+
+.second_row button {
+  background-color: #00587a;
+  width: 25%;
+  text-align: center;
+  height: 100px;
+  color: #e7e7de;
+  border: 1px solid #0f3057;
+  font-size: 20px;
+}
+
+.row_with_equal button:nth-child(4) {
+  background-color: #00587a;
+  width: 25%;
+  text-align: center;
+  height: 200px;
+  color: #e7e7de;
+  border: 1px solid #0f3057;
+  font-size: 20px;
+}
+
+.third_row {
+  margin-top: -100px;
+}
+
+.third_row button:nth-child(1) {
+  background-color: #00587a;
+  width: 50%;
+  text-align: center;
+  height: 100px !important;
+  color: #e7e7de;
+  border: 1px solid #0f3057;
+  font-size: 20px;
+}
+
+.third_row button:nth-child(2) {
+  background-color: #00587a;
+  width: 25%;
+  text-align: center;
+  height: 100px;
+  color: #e7e7de;
+  border: 1px solid #0f3057;
+  font-size: 20px;
+}
+
+.input {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input input {
+  font-size: 28px;
+  background-color: #0f3057;
+  border: none;
+  width: 100%;
+  color: #e7e7de;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.first_row button:nth-child(1) {
+  background-color: #008891;
 }
