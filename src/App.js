@@ -52,16 +52,16 @@ class App extends React.Component {
     let operator = target.innerText;
     let input = this.state.input;
 
-    if (input.length > 1 && input[0] != 0) {
+    if (input.length > 1 && input[0] === 0) {
+      this.setState({
+        input: 0,
+        isOperator: false,
+      })
+    } else {
       this.setState({
         input: operator,
         isOperator: true,
         formula: input.concat(operator)
-      })
-    } else {
-      this.setState({
-        input: 0,
-        isOperator: false,
       })
     }
   }
