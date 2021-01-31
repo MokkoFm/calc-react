@@ -51,11 +51,19 @@ class App extends React.Component {
   putOperator({target}) {
     let operator = target.innerText;
     let input = this.state.input;
-    this.setState({
-      input: operator,
-      isOperator: true,
-      formula: input.concat(operator)
-    })
+
+    if (input.length > 1 && input[0] != 0) {
+      this.setState({
+        input: operator,
+        isOperator: true,
+        formula: input.concat(operator)
+      })
+    } else {
+      this.setState({
+        input: 0,
+        isOperator: false,
+      })
+    }
   }
 
   onEqual() {
@@ -80,7 +88,7 @@ class App extends React.Component {
         <div className="row first_row">
           <button id="clear" onClick={this.clear.bind(this)}>AC</button>
           <button id="divide" onClick={this.putOperator}>/</button>
-          <button id="multiply" onClick={this.putOperator}>x</button>
+          <button id="multiply" onClick={this.putOperator}>*</button>
         </div>
         <div className="row second_row">
           <button id="seven" onClick={this.putNumber}>7</button>
